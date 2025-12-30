@@ -1,0 +1,218 @@
+Folder KajSizeReps/
+
+--- index.html ---
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KajSize Reps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a href="#" class="logo">KajSize Reps</a>
+    <div class="menu">
+      <a href="#qc">QC</a>
+      <a href="#converter">Link Converter</a>
+      <a href="#discord">Discord</a>
+    </div>
+  </nav>
+</header>
+<section class="hero">
+  <h1>KajSize Reps</h1>
+  <p>Best Batches • QC • Community</p>
+</section>
+<section class="section" id="qc">
+  <h2>QC Finder</h2>
+  <div class="grid">
+    <a href="#" class="card">Item 1 – Best Batch</a>
+    <a href="#" class="card">Item 2 – Best Batch</a>
+    <a href="#" class="card">Item 3 – Best Batch</a>
+    <a href="#" class="card">Item 4 – Best Batch</a>
+    <a href="#" class="card">Item 5 – Best Batch</a>
+  </div>
+</section>
+<section class="section" id="converter">
+  <h2>Link Converter</h2>
+  <p>Konwertuj linki Taobao / Weidian / 1688</p>
+  <a href="#" class="btn">Otwórz Converter</a>
+</section>
+<section class="section" id="best">
+  <h2>Best Batches</h2>
+  <div class="grid">
+    <a href="#" class="card">Jordan 1 – LJR</a>
+    <a href="#" class="card">Jordan 4 – GX</a>
+    <a href="#" class="card">Dunk – M Batch</a>
+    <a href="#" class="card">Yeezy – LW</a>
+    <a href="#" class="card">AF1 – OG</a>
+    <a href="#" class="card">New Balance – TOP</a>
+  </div>
+</section>
+<section class="section" id="discord">
+  <h2>Dołącz do Discorda</h2>
+  <p>Community KajSize Reps</p>
+  <a href="#" class="btn">Wejdź na Discord</a>
+</section>
+<footer>
+  <p>© 2025 KajSizeReps.pl</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+--- style.css ---
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body {
+    background:#f8f8f8;
+    color:#333;
+    scroll-behavior:smooth;
+}
+
+header {
+    background:#fff;
+    padding:15px 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo {
+    font-size:22px;
+    font-weight:bold;
+    color:#333;
+    text-decoration:none;
+}
+
+.menu a {
+    margin-left:20px;
+    color:#333;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.menu a:hover {
+    opacity:0.7;
+}
+
+.hero {
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1 {
+    font-size:52px;
+    animation:fadeIn 1.5s;
+}
+
+.hero p {
+    font-size:20px;
+    animation:fadeIn 2s;
+}
+
+.section {
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.6s ease;
+}
+
+.section.visible {
+    opacity:1;
+    transform:translateY(0);
+}
+
+.section h2 {
+    margin-bottom:25px;
+    border-bottom:2px solid #333;
+    display:inline-block;
+}
+
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:15px;
+}
+
+.card {
+    padding:20px;
+    border:1px solid #ddd;
+    text-decoration:none;
+    color:#333;
+    background:#fff;
+    transition:0.3s;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    background:#f0f0f0;
+    transform:scale(1.05);
+}
+
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    border:1px solid #333;
+    color:#333;
+    text-decoration:none;
+    transition:0.3s;
+    border-radius:8px;
+}
+
+.btn:hover {
+    background:#333;
+    color:#fff;
+    transform:scale(1.05);
+}
+
+footer {
+    text-align:center;
+    padding:20px;
+    background:#fff;
+    color:#333;
+    box-shadow:0 -2px 5px rgba(0,0,0,0.05);
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@media (max-width:768px){
+    .menu {
+        display:flex;
+        flex-direction:column;
+    }
+    .menu a {
+        margin:10px 0;
+    }
+}
+
+--- script.js ---
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+},{ threshold: 0.2 });
+sections.forEach(section => observer.observe(section));
