@@ -78,28 +78,158 @@ KajSizeReps/
 </body>
 </html>
 
---- style.css ---
-* { margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif; }
-body { background:#0b0b0b; color:white; scroll-behavior:smooth; }
-header { background:#000; padding:15px 30px; position:sticky; top:0; z-index:1000; }
-.nav { display:flex; justify-content:space-between; align-items:center; }
-.logo { font-size:22px; font-weight:bold; color:white; text-decoration:none; }
-.menu a { margin-left:20px; color:white; text-decoration:none; transition:0.3s; }
-.menu a:hover { opacity:0.7; }
-.hero { text-align:center; padding:80px 20px; }
-.hero h1 { font-size:52px; animation:fadeIn 1.5s; }
-.hero p { font-size:20px; animation:fadeIn 2s; }
-.section { max-width:1100px; margin:auto; padding:50px 20px; opacity:0; transform:translateY(30px); transition:all 0.6s ease; }
-.section.visible { opacity:1; transform:translateY(0); }
-.section h2 { margin-bottom:25px; border-bottom:2px solid white; display:inline-block; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:15px; }
-.card { padding:20px; border:1px solid white; text-decoration:none; color:white; background:#141414; transition:0.3s; }
-.card:hover { background:white; color:black; transform:scale(1.05); }
-.btn { display:inline-block; margin-top:20px; padding:12px 25px; border:1px solid white; color:white; text-decoration:none; transition:0.3s; }
-.btn:hover { background:white; color:black; transform:scale(1.05); }
-footer { text-align:center; padding:20px; background:#000; }
-@keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-@media (max-width:768px){ .menu { display:flex; flex-direction:column; } .menu a { margin:10px 0; } }
+/* Reset i font */
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body {
+    background:#f8f8f8; /* jasne tło zamiast czarnego */
+    color:#333;         /* ciemny tekst */
+    scroll-behavior:smooth;
+}
+
+/* Nagłówek */
+header {
+    background:#fff; /* biały pasek */
+    padding:15px 30px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 5px rgba(0,0,0,0.1); /* delikatny cień */
+}
+
+.nav {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo {
+    font-size:22px;
+    font-weight:bold;
+    color:#333;
+    text-decoration:none;
+}
+
+.menu a {
+    margin-left:20px;
+    color:#333;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.menu a:hover {
+    opacity:0.7;
+}
+
+/* Sekcja hero */
+.hero {
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1 {
+    font-size:52px;
+    animation:fadeIn 1.5s;
+}
+
+.hero p {
+    font-size:20px;
+    animation:fadeIn 2s;
+}
+
+/* Sekcje i animacje */
+.section {
+    max-width:1100px;
+    margin:auto;
+    padding:50px 20px;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.6s ease;
+}
+
+.section.visible {
+    opacity:1;
+    transform:translateY(0);
+}
+
+.section h2 {
+    margin-bottom:25px;
+    border-bottom:2px solid #333; /* ciemniejsza linia */
+    display:inline-block;
+}
+
+/* Grid kart */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:15px;
+}
+
+/* Karty */
+.card {
+    padding:20px;
+    border:1px solid #ddd;
+    text-decoration:none;
+    color:#333;
+    background:#fff;
+    transition:0.3s;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card:hover {
+    background:#f0f0f0;
+    transform:scale(1.05);
+}
+
+/* Przyciski */
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    border:1px solid #333;
+    color:#333;
+    text-decoration:none;
+    transition:0.3s;
+    border-radius:8px;
+}
+
+.btn:hover {
+    background:#333;
+    color:#fff;
+    transform:scale(1.05);
+}
+
+/* Stopka */
+footer {
+    text-align:center;
+    padding:20px;
+    background:#fff;
+    color:#333;
+    box-shadow:0 -2px 5px rgba(0,0,0,0.05);
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+/* Responsywność */
+@media (max-width:768px){
+    .menu {
+        display:flex;
+        flex-direction:column;
+    }
+    .menu a {
+        margin:10px 0;
+    }
+}
 
 --- script.js ---
 const sections = document.querySelectorAll('.section');
